@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{indentfirst}
 \usepackage{float}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage[polish]{babel}
@@ -19,10 +20,17 @@
 % Variables
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \newcommand{\Prowadzacy}{dr hab. inż. Robert \textsc{Nowicki} prof. PCz}
-\newcommand{\Ja}{Piotr \textsc{Filek}\\101311}
+\newcommand{\Ja}{Piotr \textsc{Filek}\\101311\\I grupa}
+\newcommand{\DataLaboratorium}{8 października 2013}
 \newcommand{\Uczelnia}{ \textsc{\LARGE Politechnika Częstochowska}\\[1.5cm]}
 \newcommand{\Przedmiot}{ \textsc{\Large Podstawy Sieci Komputerowych}\\[1.5cm]}
 \newcommand{\TytulLaboratirum}{Laboratorium 1\\Sieci współdzielone}
+\frenchspacing
+
+
+
+
+\setlength{\intextsep}{20pt plus 1.0pt minus 2.0pt}
 
 %Equations list
 % \newcommand{\listequationsname}{List of Equations}
@@ -32,34 +40,62 @@
 
 \begin{document}
 \input{./title_page.tex}
-\begin{tableofcontents}
-  \listoffigures
-\end{tableofcontents}
+% \begin{tableofcontents}
+%   \listoffigures
+% \end{tableofcontents}
 \newpage
-\section{Wstęp}
-
-\begin{figure}[ht]
+\section{Cel laboratorium}
+Celem laboratorium była obserwacja działania współdzielonej sieci Ethernet w funkcji stacji za pomocą symulatora takiej sieci oraz badanie niektórych parametrów sieci.
+\section{Wyniki}
+Poniższe symulacje zostały przeprowadzone dla punktu pomiarowego z \textbf{32 stacjami}, o \textbf{rozmiarze pakietu 1000} z opcją \textbf{ethernet\_advanced} w \textbf{Select Technologies}, oraz parametrze \textbf{Center Node Model} ustawionym na wartość \textbf{ethernet64\_hub\_adv}.
+\begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{screens/samo/load.png}
-  \caption{test}
+  \includegraphics[width=0.65\textwidth]{screens/samo/001_sentrec.png}
+ \caption{Wykres przedstawiający liczbę bitów wysłanych oraz liczbę bitów odebranych przez stacje przy \textbf{Interarrival time} ustawionym na 0.01. }
+ \label{fig:sentrec001}
 \end{figure}
-\section{Przebieg zadań}
-\subsection{Test 1}
-\subsection{Test 2}
-
-\begin{figure}[ht]
+ 
+\begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{screens/samo/load.png}
- \caption[Close up of \textit{Hemidactylus} sp.]
-   {Close up of \textit{Hemidactylus} sp., which is
-   part the genus of the gecko family. It is the
-   second most speciose genus in the family.}
- \label{fig:example}
+  \includegraphics[width=0.65\textwidth]{screens/samo/0005_sentrec.png}
+ \caption{Wykres przedstawiający liczbę bitów wysłanych oraz liczbę bitów odebranych przez stacje przy \textbf{Interarrival time} ustawionym na 0.005. }
+ \label{fig:sentrec005}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/samo/0001_sentrec.png}
+ \caption{Wykres przedstawiający liczbę bitów wysłanych oraz liczbę bitów odebranych przez stacje przy \textbf{Interarrival time} ustawionym na 0.001. }
+ \label{fig:sentrec0001}
+\end{figure}
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/samo/koncentrator_collisioncount.png}
+  \caption{Wykres przedstawiający ilość kolizji w koncentratorze.}
+  \label{fig:collisioncount}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/samo/koncentrator_utilization.png}
+  \caption{Wykres przedstawiający wykorzystanie koncentratora.}
+  \label{fig:utilization}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/samo/delay.png}
+  \caption{Wykres przedstawiający opóźnienia.}
+  \label{fig:delay}
 \end{figure}
 
 \section{Wnioski}
+Liczba pakietów wysłanych (Rysunek \ref{fig:sentrec001}, \ref{fig:sentrec005}, \ref{fig:sentrec0001}) zwiększa się wraz ze zwiększeniem częstotliwości ich wysyłania.
 
-
-Lubię placki
+Ilość kolizji (Rysunek \ref{fig:utilization}) oraz wykorzystanie koncentratora (Rysunek \ref{fig:collisioncount}) są podobne dla wszystkich scenariuszy, jednakże opóźnienia (Rysunek \ref{fig:delay}) wzrastają wraz ze zwiększeniem ilości wysyłanych pakietów.
 
 \end{document}
