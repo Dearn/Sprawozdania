@@ -94,8 +94,8 @@ Poniższe symulacje zostały przeprowadzone dla punktu pomiarowego z \textbf{32 
 \end{figure}
 
 \section{Wnioski}
-Liczba pakietów wysłanych (Rysunek \ref{fig:sentrec001}, \ref{fig:sentrec005}, \ref{fig:sentrec0001}) zwiększa się wraz ze zwiększeniem częstotliwości ich wysyłania.
+Liczba pakietów wysłanych (Rysunek \ref{fig:sentrec001}, \ref{fig:sentrec005}, \ref{fig:sentrec0001}) zwiększa się wraz ze zwiększeniem częstotliwości ich wysyłania. Im większe obciążenie sieci, tym bardziej zwiększa się różnica pomiędzy pakietami wysłanymi i odebranymi - jest to spowodowane sposobem działania koncentratora, który nie może określić źródła ani miejsca docelowego odbieranych informacji, wysyła je do wszystkich połączonych z nim komputerów. Sygnał z portu wejściowego na \emph{wszystkie} porty wyjściowe bit po bicie.
 
-Ilość kolizji (Rysunek \ref{fig:utilization}) oraz wykorzystanie koncentratora (Rysunek \ref{fig:collisioncount}) są podobne dla wszystkich scenariuszy, jednakże opóźnienia (Rysunek \ref{fig:delay}) wzrastają wraz ze zwiększeniem ilości wysyłanych pakietów.
+Ilość kolizji (Rysunek \ref{fig:utilization}) oraz wykorzystanie koncentratora (Rysunek \ref{fig:collisioncount}) są podobne dla wszystkich scenariuszy, jednakże opóźnienia (Rysunek \ref{fig:delay}) wzrastają wraz ze zwiększeniem ilości wysyłanych pakietów. Jest to spowodowane tym, że koncentrator może wysyłać i odbierać informacje, jednak nie jednocześnie.
 
 \end{document}
