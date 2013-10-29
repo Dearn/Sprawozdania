@@ -42,6 +42,29 @@ Celem laboratorium było zpoznanie się z działaniem sieci o topologii pierści
 Zbadany został także wpływ stacji oraz natężenia ruchu w sieci.
 \section{Wyniki}
 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/2_sent.png}
+ \caption{Wykres przedstawiający ilość bitów/sec wysłanych dla sieci z 2 stacjami roboczymi}
+ \label{fig:2s}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/2_recv.png}
+ \caption{Wykres przedstawiający ilość bitów/sec odebranych dla sieci z 2 stacjami roboczymi}
+ \label{fig:2r}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/2_delay.png}
+ \caption{Wykres przedstawiający opóźnienia w sieci z 2 stacjami roboczymi}
+ \label{fig:2d}
+\end{figure}
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.65\textwidth]{screens/4_sent.png}
@@ -53,7 +76,7 @@ Zbadany został także wpływ stacji oraz natężenia ruchu w sieci.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.65\textwidth]{screens/4_recv.png}
- \caption{Wykres przedstawiający ilość bitów/sec wysłanych dla sieci z 4 stacjami roboczymi}
+ \caption{Wykres przedstawiający ilość bitów/sec odebranych dla sieci z 4 stacjami roboczymi}
  \label{fig:4r}
 \end{figure}
 
@@ -62,6 +85,51 @@ Zbadany został także wpływ stacji oraz natężenia ruchu w sieci.
   \includegraphics[width=0.65\textwidth]{screens/4_delay.png}
  \caption{Wykres przedstawiający opóźnienia w sieci z 4 stacjami roboczymi}
  \label{fig:4d}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/8_sent.png}
+ \caption{Wykres przedstawiający ilość bitów/sec wysłanych dla sieci z 8 stacjami roboczymi}
+ \label{fig:8s}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/8_recv.png}
+ \caption{Wykres przedstawiający ilość bitów/sec odebranych dla sieci z 8 stacjami roboczymi}
+ \label{fig:8r}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/8_delay.png}
+ \caption{Wykres przedstawiający opóźnienia w sieci z 8 stacjami roboczymi}
+ \label{fig:8d}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/16_sent.png}
+ \caption{Wykres przedstawiający ilość bitów/sec wysłanych dla sieci z 16 stacjami roboczymi}
+ \label{fig:16s}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/16_recv.png}
+ \caption{Wykres przedstawiający ilość bitów/sec odebranych dla sieci z 16 stacjami roboczymi}
+ \label{fig:16r}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/16_delay.png}
+ \caption{Wykres przedstawiający opóźnienia w sieci z 16 stacjami roboczymi}
+ \label{fig:16d}
 \end{figure}
 
 \begin{figure}[H]
@@ -75,7 +143,7 @@ Zbadany został także wpływ stacji oraz natężenia ruchu w sieci.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.65\textwidth]{screens/64_recv.png}
- \caption{Wykres przedstawiający ilość bitów/sec wysłanych dla sieci z 64 stacjami roboczymi}
+ \caption{Wykres przedstawiający ilość bitów/sec odebranych dla sieci z 64 stacjami roboczymi}
  \label{fig:64r}
 \end{figure}
 
@@ -86,10 +154,35 @@ Zbadany został także wpływ stacji oraz natężenia ruchu w sieci.
  \label{fig:64d}
 \end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/128_sent.png}
+ \caption{Wykres przedstawiający ilość bitów/sec wysłanych dla sieci z 128 stacjami roboczymi}
+ \label{fig:128s}
+\end{figure}
 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/128_recv.png}
+ \caption{Wykres przedstawiający ilość bitów/sec odebranych dla sieci z 128 stacjami roboczymi}
+ \label{fig:128r}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{screens/128_delay.png}
+ \caption{Wykres przedstawiający opóźnienia w sieci z 128 stacjami roboczymi}
+ \label{fig:128d}
+\end{figure}
 
 \section{Wnioski}
-Przełącznik, (ang. \textit{switch}) w przeciwieństwie do koncentratora (ang. \textit{hub}), nie kopiuje informacji z portu bit-po-bicie, lecz przesyła \emph{ramki} - jest to możliwe dzięki działaniu na drugiej warswie (łącza danych) \emph{modelu OSI}, dzięki czemu jest w stanie przechowywać \emph{adresy MAC} wszystkich urządzeń do niego podłączonych, oraz odpowiednio adresować przesyłane dane - zamiast wysyłać je na wszystkie porty, jak to robi koncentrator. Powoduje to zmniejszenie opóźnień w sieci - jest to szczególnie widoczne w sieci równorzędnej, gdzie opóźnienia są na poziomie zerowym.
+W pierścieniu sieci \emph{Token Ring} krąży mała ramka zwana \emph{żetonem} (ang. \textit{token}). Stacja sieciowa uzyskuje prawo do transmisji informacji \emph{tylko} wtedy, gdy posiada token. Jeśli więc dowolna stacja sieciowa przejmuje token, ale w tym momencie nie zamierza transmitować, to przesyła żeton do następnej w kolejności stacji sieciowej. Każda stacja może przetrzymywać token tylko przez określony czas.
 
+Opóźnienia w sieci \emph{Token Ring} są praktycznie zerowe i nie zwiększają się wraz ze wzrostem ilości stacji czy też obciążeniem w sieci, podobnie jakt to jest w sieci typu \emph{Ethernet} opartej na przełączniku. Kolizje występują jedynie w sieci \emph{Ethernet} opartej na \emph{koncentratorze}.
+
+\emph{Token Ring} został wyparty przez switched \emph{Ethernet} który szybciej się rozwijał, obsługiwał większą ilość urządzeń oraz fakt, że budowa sieci Ethernet jest łatwiejsza w realizacji i nie wymaga dogłębnego zrozumienia protokołu, jak to jest w przypadku \emph{Token Ring}.
+
+Sieć o topologii pierścienia, w przeciwieństwie do sieci o topologii gwiazdy, nie wymaga żadnego medium transmitującego. Powoduje to zmniejszenie kosztów, jednakże może to zwiększyć awaryjność sieci - awaria pojedyńczego przewodu lub komputera powoduje przerwanie pracy całej sieci. Podpięcie nowej stacji roboczej do sieci, czy też lokalizacja uszkodzenia jest dużo trudniejsza niż w sieci o topologii gwiazdy.
 
 \end{document}
