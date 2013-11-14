@@ -1,0 +1,59 @@
+\documentclass{article}
+%packages
+% \usepackage{tocloft}
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[polish]{babel}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+% Variables
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Prowadzacy}{dr inż. Krzysztof \textsc{Rojek}}
+\newcommand{\Ja}{Piotr \textsc{Filek}\\101311\\I grupa}
+\newcommand{\DataLaboratorium}{1 listopada 2013}
+\newcommand{\Uczelnia}{ \textsc{\LARGE Politechnika Częstochowska}\\[1.5cm]}
+\newcommand{\Przedmiot}{ \textsc{\Large Grafika Komputerowa i Wizualizacja}\\[1.5cm]}
+\newcommand{\TytulLaboratirum}{Laboratorium 4\\OpenGL}
+\frenchspacing
+
+% \setlength{\intextsep}{20pt plus 1.0pt minus 2.0pt}
+
+%Equations list
+% \newcommand{\listequationsname}{List of Equations}
+% \newlistof{myequations}{equ}{\listequationsname}
+% \newcommand{\myequations}[1]{%
+% \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+
+\begin{document}
+\input{../../title_page.tex}
+% \begin{tableofcontents}
+%   \listoffigures
+% \end{tableofcontents}
+\newpage
+\section{Cel laboratorium}
+Celem laboratorium było zapoznanie się z podstawowymi instrukcjami biblioteki \emph{OpenGL}.
+\section{Przebieg laboratorium}
+Podczas laboratorium zadaniem było stworzenie sceny, która przedstawiała:
+\begin{itemize}
+\item sześcian o wymiarach 2x2x2, o różnokolorowych ścianach
+\item linie w płaszczyźnie XZ przechodzącą przez jego środek
+\item obrócenie sześcianu pod kątem 45 stopni względem osi X, Y i Z
+\end{itemize}
+Wykonując powyższe zadania, zapoznaliśmy się z takimi instrukcjami jak:
+\begin{itemize}
+\item \textsf{glTranslatef} - służąca do deklarowania krawędzi figur tworzonych za pomocą funkcji \textsf{glBegin }
+\item używając glBegin mogliśmy tworzyć takie figury jak trójkąt GL_TRIANGLES% kwadrat (\textsf{GL_QUADS}), oraz linia (\textsf{GL_LINES})
+\end{itemize}
+\section{Wnioski}
+\end{document}
