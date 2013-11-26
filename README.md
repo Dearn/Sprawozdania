@@ -1,5 +1,5 @@
-Sprawozdania
+Sprawozdania  
 ============
-Sieci - Podstawy Sieci Komputerowych
-SI - Sztuczna Inteligencja
-*/screens/ - screenshot
+Sieci - Podstawy Sieci Komputerowych  
+SI - Sztuczna Inteligencja  
+*/screens/ - screenshots 
