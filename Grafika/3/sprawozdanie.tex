@@ -21,10 +21,10 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \newcommand{\Prowadzacy}{dr inż. Krzysztof \textsc{Rojek}}
 \newcommand{\Ja}{Piotr \textsc{Filek}\\101311\\I grupa}
-\newcommand{\DataLaboratorium}{1 listopada 2013}
+\newcommand{\DataLaboratorium}{20 grudnia 2013}
 \newcommand{\Uczelnia}{ \textsc{\LARGE Politechnika Częstochowska}\\[1.5cm]}
 \newcommand{\Przedmiot}{ \textsc{\Large Grafika Komputerowa i Wizualizacja}\\[1.5cm]}
-\newcommand{\TytulLaboratirum}{Laboratorium 4\\OpenGL}
+\newcommand{\TytulLaboratirum}{OpenGL}
 \frenchspacing
 
 % \setlength{\intextsep}{20pt plus 1.0pt minus 2.0pt}
@@ -42,25 +42,35 @@
 % \end{tableofcontents}
 \newpage
 \section{Cel laboratorium}
-Celem laboratorium było zapoznanie się z obsługą programu \emph{GNU Make} oraz z podstawowymi instrukcjami \newline biblioteki \emph{OpenGL}. Program został napisany w języku \emph{C++} wykorzystując biblioteki \emph{QT} oraz \emph{OpenGL}.
+Celem laboratorium było wykonanie projektu w języku \emph{C++} wykorzystując biblioteki \emph{QT} oraz \emph{OpenGL}.
 \section{Przebieg laboratorium}
-Podczas laboratorium zadaniem było stworzenie sceny, która przedstawiała:
+Podczas laboratorium zadaniem dwóch scen.
+\begin{enumerate}
+\item Scena pierwsza miała za zadanie przedstawić:
 \begin{itemize}
 \item sześcian o wymiarach 2x2x2, o różnokolorowych ścianach
 \item linie w płaszczyźnie XZ przechodzącą przez jego środek
 \item obrócenie sześcianu pod kątem 45 stopni względem osi X, Y i Z
 \item podłogę wykonaną z trójkątów (każdy wierzchołek z innym kolorem)
 \end{itemize}
+\item Scena druga miała za zadanie przedstawić:
+\begin{itemize}
+\item animacja wzrostu podłogi z pierwszej sceny
+\item dodanie tekstury na podłogę
+\end{itemize}
+\end{enumerate}
+
 Wykonując powyższe zadania, zapoznaliśmy się z takimi instrukcjami jak:
 \begin{itemize}
 \item \textsf{glTranslatef} - funkcja służąca do zmiany pozycji na której rysuje się obiekt. Kolejne przesunięcia odnoszą się w stosunku do siebie, a nie pozycji początkowej
-\item używając \textsf{glBegin} mogliśmy tworzyć takie figury jak trójkąt (\textsf{GL\_TRIANGLES}), kwadrat (\textsf{GL\_QUADS}), czy linia (\textsf{GL\_LINES})
+\item tworzenie figury jak trójkąt (\textsf{GL\_TRIANGLES}), kwadrat (\textsf{GL\_QUADS}), czy linia (\textsf{GL\_LINES})
 \item \textsf{glColor3f} do przypisania koloru wierzchołków (takie same - jednolity kolor, różne - gradient)
 \item \textsf{glRotatef} do rotacji obiektów (przechylenie sześcianu) oraz jego obrotu (animacja)
 \item \textsf{glLoadIdentity} resetuje pozycje oraz nachylenie do wartości domyślnej
-
-
+\item \textsf{glFrontFace}(\textsf{GL\_CCW}/\textsf{GL\_CW)}) - do przetestowania poprawności definiowania wierzchołków - kolejno przeciwnie oraz zgodnie z ruchem wskazówek zegara.
+\item \textsf{glTexImage2D} - do załadowania pliku z teksturą
+\item \textsf{glTexCoord2f(x, y)} - lewy górny oraz prawy dolny wierchołek kwadratu do zateksturowania
 \end{itemize}
 \vfill
-Kod programu dostępny pod adresem: \newline \url{http://github.com/Dearn/Grafika/tree/master/1}
+Kod programu jest dostępny pod adresem: \url{http://github.com/Dearn/Grafika/tree/master/3}
 \end{document}
