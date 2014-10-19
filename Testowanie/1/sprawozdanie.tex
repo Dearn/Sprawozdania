@@ -1,0 +1,151 @@
+\documentclass{article}
+%packages
+% \usepackage{tocloft}
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{ucs}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[polish]{babel}
+\usepackage{listings}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+% Variables
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Prowadzacy}{dr inż. Grzegorz \textsc{Michalski}}
+\newcommand{\Ja}{Piotr \textsc{Filek}\\Marcin \textsc{Nowak}\\II grupa IO}
+\newcommand{\DataLaboratorium}{9 października 2014}
+\newcommand{\Uczelnia}{ \textsc{\LARGE Politechnika Częstochowska}\\[1.5cm]}
+\newcommand{\Przedmiot}{ \textsc{\Large Testowanie Oprogramowania}\\[1.5cm]}
+\newcommand{\TytulLaboratirum}{Laboratorium 1}
+%% \frenchspacing
+
+\lstset{
+        language=SQL,
+    inputencoding=utf8x, 
+    extendedchars=\true,
+    literate={ą}{{\k{a}}}1
+             {Ą}{{\k{A}}}1
+             {ę}{{\k{e}}}1
+             {Ę}{{\k{E}}}1
+             {ó}{{\'o}}1
+             {Ó}{{\'O}}1
+             {ś}{{\'s}}1
+             {Ś}{{\'S}}1
+             {ł}{{\l{}}}1
+             {Ł}{{\L{}}}1
+             {ż}{{\.z}}1
+             {Ż}{{\.Z}}1
+             {ź}{{\'z}}1
+             {Ź}{{\'Z}}1
+             {ć}{{\'c}}1
+             {Ć}{{\'C}}1
+             {ń}{{\'n}}1
+             {Ń}{{\'N}}1
+}
+
+% \setlength{\intextsep}{20pt plus 1.0pt minus 2.0pt}
+
+%Equations list
+% \newcommand{\listequationsname}{List of Equations}
+% \newlistof{myequations}{equ}{\listequationsname}
+% \newcommand{\myequations}[1]{%
+% \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+
+\begin{document}
+\input{../../title_page.tex}
+% \begin{tableofcontents}
+%   \listoffigures
+% \end{tableofcontents}
+\newpage
+\section{Cel laboratorium}
+Celem laboratorium było napisanie prostego kalkulatora w wybranym języku (C++ w naszym przypadku), oraz wykonanie testów do kalkulatora napisanego przez inną osobę (Damian Łukasik).
+
+\section{Przebieg laboratorium}
+\subsection{Działanie programu}
+
+\begin{lstlisting}
+$ ./a.out
+Witam w Kalkulatorze
+Wybierz:
+0-wyjście,
+1-dodawanie,
+2-odejmowanie,
+3-mnozenie,
+4-dzielenie,
+5-pierwiastek,
+6-równanie kwadratowe
+Wyieram=
+
+\end{lstlisting}
+\subsection{Przypadki testowe}
+Testy zakończone sukcesem:
+\begin{enumerate}
+\item Wybranie opcji 0-6 - zostajemy poproszeni o podanie liczb
+\item Wybranie opcji spoza zakresu - ponowne poproszenie o podanie liczby 0-6
+\item Wpisanie litery zamiast cyfry - zakończenie programu
+\item Dodawanie dwóch liczb całkowitych (1, 2) - poprawny wynik
+\item Dodawanie dwóch liczb rzeczywistych (1.23, -0.12) - poprawny wynik
+\item Odejomowanie dwóch liczb całkowitych (1, 2) - poprawny wynik
+\item Odejomowanie dwóch liczb rzeczywistych (1.23, -0.12 - poprawny wynik
+\item Mnożenie dwóch liczb całkowitych (1, 2) - poprawny wynik
+\item Mnożenie dwóch liczb rzeczywistych (1.23, -0.12 - poprawny wynik
+\item Dzielenie dwóch liczb całkowitych (1, 2) - poprawny wynik
+\item Dzielenie dwóch liczb rzeczywistych (1.23, -0.12 - poprawny wynik
+\item Dzielenie przez zero (25, 0) - komunikat ``Nie dzieli się przez zero!!!''
+\item Pierwiastkowanie liczby naturalnej 5 - poprawny wynik
+\item Sprawdzenie, czy równanie kwadratowe wykrywa zero miejsc zerowych dla wartości (1, 2, 5)
+\item Sprawdzenie, czy równanie kwadratowe wykrywa jedno miejsce zerowe dla wartości (5, 5, 1.25)
+
+  
+
+\end{enumerate}
+Testy zakończone niepowodzeniem:
+\begin{enumerate}
+
+\item Podanie litery zamiast liczby przy jakimkolwiek działaniu - zapętlenie się programu
+\item Sprawdzenie, czy równanie kwadratowe zwraca błąd gdy a=0 przy podanym wejściu (0, 5, 1.25) - wykrywa dwa miejsca zerowe -inf oraz -nan  
+
+\end{enumerate}
+
+\section{Kod programu}
+Autor: Damian Łukasik
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Scilab,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+\lstinputlisting[title=lab1ProgramDamiana.cpp]{lab1ProgramDamiana.cpp}
+
+\end{document}
