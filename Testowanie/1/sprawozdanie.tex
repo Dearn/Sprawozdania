@@ -1,5 +1,5 @@
 \documentclass{article}
-%packages
+% packages
 % \usepackage{tocloft}
 \usepackage{polski}
 \usepackage{amsmath}
@@ -12,12 +12,18 @@
 \usepackage[polish]{babel}
 \usepackage{listings}
 \usepackage{hyperref}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
 \hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=black
 }
 % Variables
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
@@ -30,32 +36,32 @@
 %% \frenchspacing
 
 \lstset{
-        language=SQL,
-    inputencoding=utf8x, 
-    extendedchars=\true,
-    literate={ą}{{\k{a}}}1
-             {Ą}{{\k{A}}}1
-             {ę}{{\k{e}}}1
-             {Ę}{{\k{E}}}1
-             {ó}{{\'o}}1
-             {Ó}{{\'O}}1
-             {ś}{{\'s}}1
-             {Ś}{{\'S}}1
-             {ł}{{\l{}}}1
-             {Ł}{{\L{}}}1
-             {ż}{{\.z}}1
-             {Ż}{{\.Z}}1
-             {ź}{{\'z}}1
-             {Ź}{{\'Z}}1
-             {ć}{{\'c}}1
-             {Ć}{{\'C}}1
-             {ń}{{\'n}}1
-             {Ń}{{\'N}}1
+  language=SQL,
+  inputencoding=utf8x, 
+  extendedchars=\true,
+  literate={ą}{{\k{a}}}1
+  {Ą}{{\k{A}}}1
+  {ę}{{\k{e}}}1
+  {Ę}{{\k{E}}}1
+  {ó}{{\'o}}1
+  {Ó}{{\'O}}1
+  {ś}{{\'s}}1
+  {Ś}{{\'S}}1
+  {ł}{{\l{}}}1
+  {Ł}{{\L{}}}1
+  {ż}{{\.z}}1
+  {Ż}{{\.Z}}1
+  {ź}{{\'z}}1
+  {Ź}{{\'Z}}1
+  {ć}{{\'c}}1
+  {Ć}{{\'C}}1
+  {ń}{{\'n}}1
+  {Ń}{{\'N}}1
 }
 
 % \setlength{\intextsep}{20pt plus 1.0pt minus 2.0pt}
 
-%Equations list
+% Equations list
 % \newcommand{\listequationsname}{List of Equations}
 % \newlistof{myequations}{equ}{\listequationsname}
 % \newcommand{\myequations}[1]{%
@@ -74,21 +80,21 @@ Celem laboratorium było napisanie prostego kalkulatora w wybranym języku (C++ 
 \subsection{Działanie programu}
 
 \begin{lstlisting}
-$ ./a.out
-Witam w Kalkulatorze
-Wybierz:
-0-wyjście,
-1-dodawanie,
-2-odejmowanie,
-3-mnozenie,
-4-dzielenie,
-5-pierwiastek,
-6-równanie kwadratowe
-Wyieram=
+  Witam w Kalkulatorze
+  Wybierz:
+  0-wyjście,
+  1-dodawanie,
+  2-odejmowanie,
+  3-mnozenie,
+  4-dzielenie,
+  5-pierwiastek,
+  6-równanie kwadratowe
+  Wyieram=
 
 \end{lstlisting}
+
 \subsection{Przypadki testowe}
-Testy zakończone sukcesem:
+\subsubsection{Testy zakończone sukcesem}
 \begin{enumerate}
 \item Wybranie opcji 0-6 - zostajemy poproszeni o podanie liczb
 \item Wybranie opcji spoza zakresu - ponowne poproszenie o podanie liczby 0-6
@@ -101,24 +107,22 @@ Testy zakończone sukcesem:
 \item Mnożenie dwóch liczb rzeczywistych (1.23, -0.12 - poprawny wynik
 \item Dzielenie dwóch liczb całkowitych (1, 2) - poprawny wynik
 \item Dzielenie dwóch liczb rzeczywistych (1.23, -0.12 - poprawny wynik
-\item Dzielenie przez zero (25, 0) - komunikat ``Nie dzieli się przez zero!!!''
+\item Dzielenie przez zero (25, 0) - komunikat "Nie dzieli się przez zero!!!"
 \item Pierwiastkowanie liczby naturalnej 5 - poprawny wynik
 \item Sprawdzenie, czy równanie kwadratowe wykrywa zero miejsc zerowych dla wartości (1, 2, 5)
 \item Sprawdzenie, czy równanie kwadratowe wykrywa jedno miejsce zerowe dla wartości (5, 5, 1.25)
-
-  
-
 \end{enumerate}
-Testy zakończone niepowodzeniem:
+\subsubsection{Testy zakończone niepowodzeniem}
 \begin{enumerate}
 
-\item Podanie litery zamiast liczby przy jakimkolwiek działaniu - zapętlenie się programu
+\item Podanie nieprawidłowego znaku  zamiast liczby przy jakimkolwiek działaniu - zapętlenie się programu
 \item Sprawdzenie, czy równanie kwadratowe zwraca błąd gdy a=0 przy podanym wejściu (0, 5, 1.25) - wykrywa dwa miejsca zerowe -inf oraz -nan  
 
 \end{enumerate}
 
-\section{Kod programu}
-Autor: Damian Łukasik
+
+
+
 \lstset{ %
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
   basicstyle=\footnotesize,        % the size of the fonts that are used for the code
@@ -146,6 +150,8 @@ Autor: Damian Łukasik
   tabsize=2,                       % sets default tabsize to 2 spaces
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
+\subsection{Kod Programu}
+Autor: Damian Łukasik
 \lstinputlisting[title=lab1ProgramDamiana.cpp]{lab1ProgramDamiana.cpp}
 
 \end{document}
