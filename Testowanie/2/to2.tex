@@ -1,0 +1,151 @@
+\documentclass{article}
+% packages
+% \usepackage{tocloft}
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{ucs}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[polish]{babel}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=black
+}
+% Variables
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Prowadzacy}{dr inż. Grzegorz \textsc{Michalski}}
+\newcommand{\Ja}{Piotr \textsc{Filek}\\Mateusz \textsc{Stala}\\II grupa IO}
+\newcommand{\DataLaboratorium}{15 października 2014}
+\newcommand{\Uczelnia}{ \textsc{\LARGE Politechnika Częstochowska}\\[1.5cm]}
+\newcommand{\Przedmiot}{ \textsc{\Large Testowanie Oprogramowania}\\[1.5cm]}
+\newcommand{\TytulLaboratirum}{Laboratorium 2}
+%% \frenchspacing
+
+\lstset{
+  language=SQL,
+  inputencoding=utf8x, 
+  extendedchars=\true,
+  literate={ą}{{\k{a}}}1
+  {Ą}{{\k{A}}}1
+  {ę}{{\k{e}}}1
+  {Ę}{{\k{E}}}1
+  {ó}{{\'o}}1
+  {Ó}{{\'O}}1
+  {ś}{{\'s}}1
+  {Ś}{{\'S}}1
+  {ł}{{\l{}}}1
+  {Ł}{{\L{}}}1
+  {ż}{{\.z}}1
+  {Ż}{{\.Z}}1
+  {ź}{{\'z}}1
+  {Ź}{{\'Z}}1
+  {ć}{{\'c}}1
+  {Ć}{{\'C}}1
+  {ń}{{\'n}}1
+  {Ń}{{\'N}}1
+}
+
+% \setlength{\intextsep}{20pt plus 1.0pt minus 2.0pt}
+
+% Equations list
+% \newcommand{\listequationsname}{List of Equations}
+% \newlistof{myequations}{equ}{\listequationsname}
+% \newcommand{\myequations}[1]{%
+% \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+
+\begin{document}
+\input{../../title_page.tex}
+% \begin{tableofcontents}
+%   \listoffigures
+% \end{tableofcontents}
+\newpage
+\section{Cel laboratorium}
+Celem laboratorium było zaprojektowanie przypadków testowych dla programu, który miałby za zadanie testować działanie programu sprawdzającego typ trójkąta (równoboczny, równoramienny, różboczony) oraz jego odporność na błędy. Drugim zadaniem było napisanie programu, który by przechodził wszystkie wcześniej zaprojektowane  przypadki testowe.
+
+\section{Przebieg laboratorium}
+\subsection{Działanie programu}
+
+\begin{lstlisting}
+./a.out 
+Podaj bok a: 3
+Podaj bok b: 3
+Podaj bok c: 3
+\end{lstlisting}
+
+\subsection{Przypadki testowe}
+\subsubsection{Samodzielnie zaprojektowane}
+\begin{enumerate}
+\item Czy boki tworzą trójkąt (2,2,2)
+\item Czy boki nie tworzą trójkąta (1,2,3)
+\item Czy program obsługuje liczby rzeczywiste (5.2, 5.2, 5.2)
+\item Czy program odrzuca liczby ujemne (-31, -1, -2)
+\item Czy program odrzuca zero (0, 5, 3)
+\item Czy program odrzuca nieprawidłowe wejście (a, d, c)
+\item Czy program rozpoznaje (5,5,5) jako trójkąt równoboczny
+\item Czy program rozpoznaje (5,5,6) jako trójkąt równoramienny
+\item Czy program rozpoznaje (4,5,6) jako trójkąt różnoramienny
+\item Czy program nie rozpoznaje trójkątu równobocznego (5,5,5) jako równoramiennego
+
+\end{enumerate}
+\subsubsection{Propozycje testów od prowadzącego}
+\begin{enumerate}
+
+\item Czy program czeka na wejście w przypadku wciśnięcia Enter
+\item Czy program nie wykrywa (0,0,0) jako równobocznego
+\item Czy program nie wykrywa (0,0,1) jako równoramiennego
+\item Permutacje wszelkich wprowadzanych danych
+\end{enumerate}
+
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Scilab,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+\subsection{Kod Programu}
+Autorzy: Piotr Filek, Mateusz Stala
+\lstinputlisting[title=trojkat.cpp]{trojkat.cpp}
+
+\section{Wnioski}
+\label{sec:wnioski}
+
+W przeciwieństwie do pierwszych zajęć, przypadki testowane były planowane przed napisaniem programu - zasymulowanie efektu testowania programu, którego nie pisaliśmy/nie posiadamy kodu źródłowego. Pomimo prowadzącego zajęcia sugerującego istnienie conajmniej 15 przypadków testowych, nie udało się nam ich tyle odnaleźć. Prowadzący na koniec zajęć przeczytał zaproponowane przez siebie przypadki testowe, z których nie wszystkie znajdowały się na naszej liście. Utwierdza to w przekonaniu, że programista zawsze potrzebuje testera, gdyż bez tego nie wszystkie rzeczy zostaną przetestowane, a te króre zaprojektowaliśmy - zawsze zakończą się sukcesem.
+
+
+\end{document}

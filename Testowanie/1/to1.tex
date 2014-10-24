@@ -29,7 +29,7 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \newcommand{\Prowadzacy}{dr inż. Grzegorz \textsc{Michalski}}
 \newcommand{\Ja}{Piotr \textsc{Filek}\\Marcin \textsc{Nowak}\\II grupa IO}
-\newcommand{\DataLaboratorium}{9 października 2014}
+\newcommand{\DataLaboratorium}{8 października 2014}
 \newcommand{\Uczelnia}{ \textsc{\LARGE Politechnika Częstochowska}\\[1.5cm]}
 \newcommand{\Przedmiot}{ \textsc{\Large Testowanie Oprogramowania}\\[1.5cm]}
 \newcommand{\TytulLaboratirum}{Laboratorium 1}
@@ -109,6 +109,7 @@ Celem laboratorium było napisanie prostego kalkulatora w wybranym języku (C++ 
 \item Dzielenie dwóch liczb rzeczywistych (1.23, -0.12 - poprawny wynik
 \item Dzielenie przez zero (25, 0) - komunikat "Nie dzieli się przez zero!!!"
 \item Pierwiastkowanie liczby naturalnej 5 - poprawny wynik
+\item Pierwiastkowanie liczby rzeczywistej 5.5 - poprawny wynik
 \item Sprawdzenie, czy równanie kwadratowe wykrywa zero miejsc zerowych dla wartości (1, 2, 5)
 \item Sprawdzenie, czy równanie kwadratowe wykrywa jedno miejsce zerowe dla wartości (5, 5, 1.25)
 \end{enumerate}
@@ -117,6 +118,8 @@ Celem laboratorium było napisanie prostego kalkulatora w wybranym języku (C++ 
 
 \item Podanie nieprawidłowego znaku  zamiast liczby przy jakimkolwiek działaniu - zapętlenie się programu
 \item Sprawdzenie, czy równanie kwadratowe zwraca błąd gdy a=0 przy podanym wejściu (0, 5, 1.25) - wykrywa dwa miejsca zerowe -inf oraz -nan  
+\item Pierwiastek sześcienny z 125 - program nie obsługuje pierwiastkowania innego niż kwadratowe
+
 
 \end{enumerate}
 
@@ -153,4 +156,6 @@ Celem laboratorium było napisanie prostego kalkulatora w wybranym języku (C++ 
 Autor: Damian Łukasik
 \lstinputlisting[title=lab1ProgramDamiana.cpp]{lab1ProgramDamiana.cpp}
 
+\section{Wnioski}
+Laboratorium miało na celu zapoznanie nas z tokiem myślenia testera oprogramowania. Testując program, którego się nie programowało samemu umożliwia nam sprawdzenie czy program posiada wszystkie funkcje, które program powinien zawierać - a o których programista niekoniecznie pomyślał.
 \end{document}
